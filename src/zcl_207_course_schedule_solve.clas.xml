@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_207_COURSE_SCHEDULE_SOLVE</CLSNAME>
+    <LANGU>D</LANGU>
+    <DESCRIPT>Problem 207 Course Schedule</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+    <WITH_UNIT_TESTS>X</WITH_UNIT_TESTS>
+   </VSEOCLASS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_IT_POSS_TO_TAKE_ALL_COURSES</CMPNAME>
+     <SCONAME>NUMCOURSES</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Natürliche Zahl</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_IT_POSS_TO_TAKE_ALL_COURSES</CMPNAME>
+     <SCONAME>PREREQUISITES</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Course tuples</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IS_IT_POSS_TO_TAKE_ALL_COURSES</CMPNAME>
+     <SCONAME>R_IS_IT_POSS_TO_TAKE_ALL_CRSES</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Feld zum Ankreuzen</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

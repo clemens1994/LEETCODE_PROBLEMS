@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_207_COURSE_SCHEDULE_COURSE</CLSNAME>
+    <LANGU>D</LANGU>
+    <DESCRIPT>Course</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>M_IS_COURSE_DONE</CMPNAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Feld zum Ankreuzen</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ARE_ALL_REQ_COURSES_DONE</CMPNAME>
+     <SCONAME>REQUIRED_COURSES</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Objektcollection mit String-Schlüssel</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ARE_ALL_REQ_COURSES_DONE</CMPNAME>
+     <SCONAME>R_ARE_ALL_DONE</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Feld zum Ankreuzen</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_IS_COURSE_DONE</CMPNAME>
+     <SCONAME>IS_COURSE_DONE</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Feld zum Ankreuzen</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_COURSE</CMPNAME>
+     <SCONAME>COURSE</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Dummy für B20 int1 (überall lokal!)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REQUIRED_COURSES</CMPNAME>
+     <SCONAME>COURSES</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Objektcollection mit String-Schlüssel</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REQUIRED_COURSES</CMPNAME>
+     <SCONAME>REQUIRED_COURSES</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Objektcollection mit String-Schlüssel</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_REQUIREMENT_COURSE</CMPNAME>
+     <SCONAME>REQUIREMENT_COURSE</SCONAME>
+     <LANGU>D</LANGU>
+     <DESCRIPT>Dummy für B20 int1 (überall lokal!)</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
