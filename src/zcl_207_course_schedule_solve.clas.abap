@@ -1,50 +1,33 @@
 CLASS zcl_207_course_schedule_solve DEFINITION
-  PUBLIC
-  FINAL
-  CREATE PUBLIC .
+  PUBLIC FINAL
+  CREATE PUBLIC.
 
-  PUBLIC SECTION.
-  PROTECTED SECTION.
   PRIVATE SECTION.
-
     METHODS is_it_poss_to_take_all_courses
-      IMPORTING
-        !prerequisites                        TYPE ztt_207_tuple
-        !numcourses                           TYPE int4
-      RETURNING
-        VALUE(r_is_it_poss_to_take_all_crses) TYPE xfeld .
+      IMPORTING prerequisites                         TYPE ztt_207_tuple
+                numcourses                            TYPE int4
+      RETURNING VALUE(r_is_it_poss_to_take_all_crses) TYPE xfeld.
 ENDCLASS.
 
 
-
-CLASS ZCL_207_COURSE_SCHEDULE_SOLVE IMPLEMENTATION.
-
-
+CLASS zcl_207_course_schedule_solve IMPLEMENTATION.
   METHOD is_it_poss_to_take_all_courses.
-
     IF lines( prerequisites ) = 0.
       r_is_it_poss_to_take_all_crses = 'X'.
       RETURN.
     ENDIF.
 
-
-
     DATA(courses) = NEW cl_object_map( ).
 
     LOOP AT prerequisites INTO DATA(prerequisite).
 
-      DATA(course) = NEW zcl_207_course_schedule_course(
-             requirement_course = prerequisite-requirement_course
-             course             = prerequisite-course  ).
+      DATA(course) = NEW zcl_207_course_schedule_course( requirement_course = prerequisite-requirement_course
+                                                         course             = prerequisite-course  ).
 
-      courses->put(
-        EXPORTING
-          key      = course->get_obj_key( )
-*         position =
-          value    = course ).
+      courses->put( key   = course->get_obj_key( )
+                    value = course ).
 
     ENDLOOP.
-
 
     LOOP AT prerequisites INTO prerequisite.
 
@@ -65,22 +48,14 @@ CLASS ZCL_207_COURSE_SCHEDULE_SOLVE IMPLEMENTATION.
         CONTINUE.
       ENDIF.
 
-      course = NEW zcl_207_course_schedule_course(
-                  requirement_course = 222
-                  course             = prerequisite-course  ).
+      course = NEW zcl_207_course_schedule_course( requirement_course = 222
+                                                   course             = prerequisite-course  ).
 
-      courses->put(
-        EXPORTING
-          key      = course->get_obj_key( )
-*         position =
-          value    = course ).
-
+      courses->put( key   = course->get_obj_key( )
+*                    position =
+                    value = course ).
 
     ENDLOOP.
-
-
-
-
 
     WHILE courses->get_values_iterator( )->has_next( ).
 
@@ -100,14 +75,13 @@ CLASS ZCL_207_COURSE_SCHEDULE_SOLVE IMPLEMENTATION.
 
         DATA(required_courses) = course->get_required_courses( courses ).
 
-        IF course->are_all_req_courses_done( required_courses )
-        OR required_courses->if_object_map~is_empty( ).
+        IF    course->are_all_req_courses_done( required_courses )
+           OR required_courses->if_object_map~is_empty( ).
 
           course->take_course( ).
           another_course_has_been_taken = 'X'.
 
         ENDIF.
-
 
       ENDLOOP.
 
@@ -117,7 +91,6 @@ CLASS ZCL_207_COURSE_SCHEDULE_SOLVE IMPLEMENTATION.
 
     ENDWHILE.
 
-
     DATA(number_of_taken_coureses) = 0.
 
     LOOP AT courses->get_values_table( ) INTO object.
@@ -125,16 +98,13 @@ CLASS ZCL_207_COURSE_SCHEDULE_SOLVE IMPLEMENTATION.
       course ?= object.
 
       IF course->check_is_course_done( ).
-        ADD 1 TO number_of_taken_coureses.
+        number_of_taken_coureses = number_of_taken_coureses + 1.
       ENDIF.
 
     ENDLOOP.
 
-
     IF number_of_taken_coureses >= numcourses.
       r_is_it_poss_to_take_all_crses = 'X'.
     ENDIF.
-
-
   ENDMETHOD.
 ENDCLASS.
